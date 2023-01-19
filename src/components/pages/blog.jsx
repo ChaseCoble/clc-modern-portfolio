@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import BlogItem from "../blog/blog-item";
-import BlogModal from "../modals/blog-modal";
+// import BlogModal from "../modals/blog-modal";
 
 class Blog extends Component {
   constructor() {
@@ -14,58 +14,57 @@ class Blog extends Component {
       totalCount: 0,
       currentPage: 0,
       isLoading: true,
-      blogModalIsOpen: false
+      // blogModalIsOpen: false
     };
 
     this.getBlogItems = this.getBlogItems.bind(this);
     this.onScroll = this.onScroll.bind(this);
     window.addEventListener("scroll", this.onScroll, false);
-    this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
-    this.handleModalClose = this.handleModalClose.bind(this);
-    this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(
-      this
-    );
-    this.handleDeleteClick = this.handleDeleteClick.bind(this);
-  }
+  //   this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
+  //   this.handleModalClose = this.handleModalClose.bind(this);
+  //   this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(
+  //     this);
+  //   this.handleDeleteClick = this.handleDeleteClick.bind(this);
+  };
 
-  handleDeleteClick(blog) {
-    axios
-      .delete(
-        `https://api.devcamp.space/portfolio/portfolio_blogs/${blog.id}`,
-        { withCredentials: true }
-      )
-      .then(response => {
-        this.setState({
-          blogItems: this.state.blogItems.filter(blogItem => {
-            return blog.id !== blogItem.id;
-          })
-        });
+  // handleDeleteClick(blog) {
+  //   axios
+  //     .delete(
+  //       `https://api.devcamp.space/portfolio/portfolio_blogs/${blog.id}`,
+  //       { withCredentials: true }
+  //     )
+  //     .then(response => {
+  //       this.setState({
+  //         blogItems: this.state.blogItems.filter(blogItem => {
+  //           return blog.id !== blogItem.id;
+  //         })
+  //       });
 
-        return response.data;
-      })
-      .catch(error => {
-        console.log("delete blog error", error);
-      });
-  }
+  //       return response.data;
+  //     })
+  //     .catch(error => {
+  //       console.log("delete blog error", error);
+  //     });
+  // }
 
-  handleSuccessfulNewBlogSubmission(blog) {
-    this.setState({
-      blogModalIsOpen: false,
-      blogItems: [blog].concat(this.state.blogItems)
-    });
-  }
+  // handleSuccessfulNewBlogSubmission(blog) {
+  //   this.setState({
+  //     blogModalIsOpen: false,
+  //     blogItems: [blog].concat(this.state.blogItems)
+  //   });
+  // }
 
-  handleModalClose() {
-    this.setState({
-      blogModalIsOpen: false
-    });
-  }
+  // handleModalClose() {
+  //   this.setState({
+  //     blogModalIsOpen: false
+  //   });
+  // }
 
-  handleNewBlogClick() {
-    this.setState({
-      blogModalIsOpen: true
-    });
-  }
+  // handleNewBlogClick() {
+  //   this.setState({
+  //     blogModalIsOpen: true
+  //   });
+  // }
 
   onScroll() {
     if (
@@ -81,7 +80,7 @@ class Blog extends Component {
     ) {
       this.getBlogItems();
     }
-  }
+  };
 
   getBlogItems() {
     this.setState({
@@ -135,7 +134,7 @@ class Blog extends Component {
 
     return (
       <div className="blog-container">
-        <BlogModal
+        {/* <BlogModal
           handleSuccessfulNewBlogSubmission={
             this.handleSuccessfulNewBlogSubmission
           }
@@ -149,7 +148,7 @@ class Blog extends Component {
               <FontAwesomeIcon icon="plus-circle" />
             </a>
           </div>
-        ) : null}
+        ) : null} */}
 
         <div className="content-container">{blogRecords}</div>
 

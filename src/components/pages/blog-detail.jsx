@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import BlogForm from "../blog/blog-form";
+// import BlogForm from "../blog/blog-form";
 import BlogFeaturedImage from "../blog/blog-featured-image";
 import ReactHtmlParser from 'kt-react-html-parser';
 
