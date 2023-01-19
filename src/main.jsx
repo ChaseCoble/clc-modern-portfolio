@@ -18,7 +18,7 @@ function main() {
   root.render(
     <Provider store={createStoreWithMiddleware({reducer:rootReducer})}>
       <BrowserRouter>
-        <App />
+        <App.jsx />
       </BrowserRouter>
     </Provider>
   );
