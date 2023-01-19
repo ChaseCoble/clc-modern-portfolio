@@ -8,6 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "engines" : {
+    "node" : "18.13.0"
+  },
   "dependencies": {
     "@editorjs/editorjs": "^2.26.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
