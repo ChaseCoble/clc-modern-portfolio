@@ -1,0 +1,1 @@
+This was a project to practice updating. This app is a copy of the provided portfolio project from Bottega University. However, I updated the app to run without deprecation, changing some class components into function components, converting Redux into Redux Toolkit and replacing deprecated dependencies. 
